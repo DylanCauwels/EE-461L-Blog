@@ -3,25 +3,65 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-	<servlet>
-    	
-    	<servlet-name>blog</servlet-name>
-    	
-    	<servlet-class>blog.BlogServlet</servlet-class>
-    	
-	</servlet>
-	
-	<servlet-mapping>
-	
-		<servlet-name>blog</servlet-name>
-		
-		<url-pattern>/blog</url-pattern>
-		
-	</servlet-mapping>
-	
          
+         
+  
+	 <servlet>
+	 
+	 	<servlet-name>ofyblog</servlet-name>
+	 	<servlet-class>guestbook.OfyBlogPostServlet</servlet-class>
+	 
+	 </servlet>
+	 
+	 <servlet-mapping>
+	 	<servlet-name>ofyblog</servlet-name>
+	 	<url-pattern>/ofyblog</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+	 
+	 	<servlet-name>subscribeEmailServlet</servlet-name>
+	 	<servlet-class>guestbook.SubscribeEmailServlet</servlet-class>
+	 
+	 </servlet>
+	 
+	 <servlet-mapping>
+	 	<servlet-name>subscribeEmailServlet</servlet-name>
+	 	<url-pattern>/subEmail</url-pattern>
+	 </servlet-mapping>
+	 
+	 
+	 
+	 <servlet>
+		<servlet-name>cronEmailServlet</servlet-name>
+		<servlet-class>guestbook.CronSendEmailServlet</servlet-class>
+	 </servlet>
+	 
+	<servlet-mapping>
+		<servlet-name>cronEmailServlet</servlet-name>
+		<url-pattern>/cronSendEmailServlet</url-pattern>
+	</servlet-mapping>
+          
   <welcome-file-list>
-  	<welcome-file>index.html</welcome-file>
-  	<welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+  <filter>
+
+        <filter-name>ObjectifyFilter</filter-name>
+
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+
+  </filter>
+
+  <filter-mapping>
+
+        <filter-name>ObjectifyFilter</filter-name>
+
+        <url-pattern>/*</url-pattern>
+
+  </filter-mapping>
+  
+  
 </web-app>
+

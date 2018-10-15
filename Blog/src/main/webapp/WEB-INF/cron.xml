@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+	<url>/cronSendEmailServlet</url>
+	<description>Cron Job that emails all subscribers a summary of blog posts in the last 24 hours every day at 5:00pm.</description>
+	<schedule>every day 17:00</schedule>
+	<timezone>America/Chicago</timezone>
+	</cron>
+</cronentries>
